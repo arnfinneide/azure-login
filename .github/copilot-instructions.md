@@ -2,7 +2,6 @@
 
 ## Build, Test, and Lint
 
-
 ```bash
 npm install
 npm run build        # builds both main and cleanup entry points via ncc
@@ -11,20 +10,17 @@ npm run build:cleanup # build src/cleanup.ts → lib/cleanup/index.js
 npm test             # run all Jest tests
 ```
 
-
 Run a single test file:
 
 ```bash
 npx jest __tests__/LoginConfig.test.ts
 ```
 
-
 Run a single test by name:
 
 ```bash
 npx jest -t "initialize with creds"
 ```
-
 
 The `lib/` directory contains the bundled output (committed to the repo); always run `npm run build` after source changes before committing.
 
