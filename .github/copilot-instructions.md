@@ -2,6 +2,7 @@
 
 ## Build, Test, and Lint
 
+
 ```bash
 npm install
 npm run build        # builds both main and cleanup entry points via ncc
@@ -10,15 +11,20 @@ npm run build:cleanup # build src/cleanup.ts → lib/cleanup/index.js
 npm test             # run all Jest tests
 ```
 
+
 Run a single test file:
+
 ```bash
 npx jest __tests__/LoginConfig.test.ts
 ```
 
+
 Run a single test by name:
+
 ```bash
 npx jest -t "initialize with creds"
 ```
+
 
 The `lib/` directory contains the bundled output (committed to the repo); always run `npm run build` after source changes before committing.
 
@@ -34,7 +40,7 @@ The `action.yml` wires these to `lib/main/index.js` and `lib/cleanup/index.js` (
 ### Key classes
 
 | Class | Location | Responsibility |
-|---|---|---|
+| --- | --- | --- |
 | `LoginConfig` | `src/common/LoginConfig.ts` | Reads action inputs, parses `creds` JSON, fetches OIDC federated token, validates config |
 | `AzureCliLogin` | `src/Cli/AzureCliLogin.ts` | Executes `az` CLI commands for all auth flows |
 | `AzPSLogin` | `src/PowerShell/AzPSLogin.ts` | Orchestrates PowerShell login via script execution |
